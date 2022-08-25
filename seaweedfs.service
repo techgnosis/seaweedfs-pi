@@ -2,7 +2,7 @@
 Description=SeaweedFS with Filer
 
 [Service]
-ExecStart=/usr/sbin/weed server -dir=/home/ubuntu/seaweedfs -filer -s3
+ExecStart=/usr/sbin/weed server -dir=/home/ubuntu/seaweedfs -filer
 Restart=true
 User=ubuntu
 Group=ubuntu
