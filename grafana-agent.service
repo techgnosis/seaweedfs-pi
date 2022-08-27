@@ -2,7 +2,7 @@
 Description=Grafana agent to collect host metrics
 
 [Service]
-ExecStart=/usr/sbin/grafana-agent -config.file=/etc/grafana-agent/agent.yml
+ExecStart=/usr/sbin/grafana-agent -config.file=/home/ubuntu/grafana-agent/agent.yml
 Restart=true
 User=ubuntu
 Group=ubuntu
