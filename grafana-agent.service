@@ -1,0 +1,11 @@
+[Unit]
+Description=Grafana agent to collect host metrics
+
+[Service]
+ExecStart=/usr/sbin/grafana-agent -config.file=/etc/grafana-agent/agent.yml
+Restart=true
+User=ubuntu
+Group=ubuntu
+
+[Install]
+WantedBy=multi-user.target

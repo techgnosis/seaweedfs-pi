@@ -1,0 +1,47 @@
+integrations:
+  node_exporter:
+    enabled: true
+    relabel_configs:
+      - replacement: rpi4
+        target_label: instance
+  prometheus_remote_write:
+    - basic_auth:
+        password: password
+        username: username
+      url: https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push
+logs:
+  configs:
+    - clients:
+        - basic_auth:
+            password: password
+            username: username
+          url: https://logs-prod-us-central1.grafana.net/loki/api/v1/push
+      name: integrations
+      positions:
+        filename: /tmp/positions.yaml
+      scrape_configs:
+        - job_name: integrations/node_exporter_journal_scrape
+          journal:
+            labels:
+              instance: rpi4
+              job: integrations/node_exporter
+            max_age: 24h
+          relabel_configs:
+            - source_labels:
+                - __journal__systemd_unit
+              target_label: unit
+            - source_labels:
+                - __journal__boot_id
+              target_label: boot_id
+            - source_labels:
+                - __journal__transport
+              target_label: transport
+            - source_labels:
+                - __journal_priority_keyword
+              target_label: level
+      target_config:
+        sync_period: 10s
+metrics:
+  global:
+    scrape_interval: 15s
+  wal_directory: /tmp/grafana-agent-wal
