@@ -4,11 +4,6 @@ integrations:
     relabel_configs:
       - replacement: rpi4
         target_label: instance
-  prometheus_remote_write:
-    - basic_auth:
-        password: password
-        username: username
-      url: https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push
 logs:
   configs:
     - clients:
@@ -44,4 +39,9 @@ logs:
 metrics:
   global:
     scrape_interval: 15s
+    remote_write:
+      - basic_auth:
+          password: password
+          username: username
+        url: https://prometheus-prod-10-prod-us-central-0.grafana.net/api/prom/push
   wal_directory: /tmp/grafana-agent-wal
