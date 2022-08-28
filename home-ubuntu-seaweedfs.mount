@@ -1,7 +1,5 @@
 [Unit]
 Description=Mount the SeaweedFS drive
-Requires=home-ubuntu-seaweedfs.mount
-After=home-ubuntu-seaweedfs.mount
 
 [Mount]
 What=/dev/sda1

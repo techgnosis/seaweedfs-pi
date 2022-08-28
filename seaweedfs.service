@@ -1,5 +1,7 @@
 [Unit]
 Description=SeaweedFS with Filer
+Requires=home-ubuntu-seaweedfs.mount
+After=home-ubuntu-seaweedfs.mount
 
 [Service]
 ExecStart=/usr/sbin/weed server -dir=/home/ubuntu/seaweedfs -filer
