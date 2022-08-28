@@ -1,1 +1,0 @@
-wget https://github.com/seaweedfs/seaweedfs/releases/download/3.23/linux_arm64.tar.gz
