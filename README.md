@@ -16,3 +16,6 @@ Access Filer at port `8888`
 wget https://github.com/seaweedfs/seaweedfs/releases/download/3.23/linux_arm64.tar.gz
 
 wget https://github.com/grafana/agent/releases/download/v0.26.1/agent-linux-arm64.zip
+
+
+Use `weed mount` to mount the whole remote file tree as a local folder. Easier to manage folders this way.
