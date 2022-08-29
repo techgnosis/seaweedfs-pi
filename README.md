@@ -19,3 +19,5 @@ wget https://github.com/grafana/agent/releases/download/v0.26.1/agent-linux-arm6
 
 
 Use `weed mount` to mount the whole remote file tree as a local folder. Easier to manage folders this way.
+
+Use `weed benchmark` to test against the master server and see your performance
